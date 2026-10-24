@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101112">
+<title>Oscar Piastri — Formula One Career Archive</title>
+<style>
+  body{margin:0;background:#090a0b;padding:24px 12px}
+  .site-note{max-width:900px;margin:0 auto 12px;color:#aaa;font:12px/1.5 Arial,sans-serif}
+</style>
+</head>
+<body>
+<div id="opa-archive" class="opa">
+  <style>
+    #opa-archive{--papaya:#ff8000;--ink:#101112;--panel:#191a1c;--line:#393a3d;--muted:#a4a4a4;color:#f5f5f5;background:var(--ink);font-family:Arial,Helvetica,sans-serif;max-width:100%;padding:clamp(18px,4vw,42px);box-sizing:border-box;line-height:1.45}
+    #opa-archive *{box-sizing:border-box}
+    #opa-archive a{color:inherit}
+    #opa-archive .opa-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--papaya);font-weight:800}
+    #opa-archive .opa-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:15px}
+    #opa-archive .opa-hero{padding:34px 0 25px;position:relative;overflow:hidden}
+    #opa-archive .opa-hero:after{content:"81";position:absolute;right:-7px;top:6px;font-size:clamp(110px,24vw,230px);font-weight:900;line-height:1;color:#202123;z-index:0;pointer-events:none}
+    #opa-archive .opa-hero>*{position:relative;z-index:1}
+    #opa-archive h1{font-size:clamp(38px,8vw,76px);line-height:.91;letter-spacing:-.055em;margin:12px 0 15px;font-weight:900;text-transform:uppercase}
+    #opa-archive h1 span{color:var(--papaya)}
+    #opa-archive .opa-sub{font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
+    #opa-archive .opa-photo-hero{height:clamp(220px,48vw,390px);margin:18px 0 24px;position:relative;overflow:hidden;background:linear-gradient(120deg,#ff8000 0%,#d95800 45%,#28211c 45%,#171819 100%)}
+    #opa-archive .opa-oscar-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(.9);position:absolute;inset:0}
+    #opa-archive .opa-photo-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.08) 35%,rgba(0,0,0,.76) 100%),linear-gradient(0deg,rgba(0,0,0,.82),transparent 58%);pointer-events:none}
+    #opa-archive .opa-photo-fallback{display:none;position:absolute;inset:0;padding:22px;flex-direction:column;justify-content:flex-end;gap:8px;background:linear-gradient(120deg,#ff8000 0%,#d95800 46%,#28211c 46%,#171819 100%);z-index:1}
+    #opa-archive .opa-photo-fallback strong{font-size:clamp(25px,5vw,42px);line-height:.95;text-transform:uppercase;color:#111;letter-spacing:-.04em}
+    #opa-archive .opa-fallback-kicker{font-size:10px;color:#171717;font-weight:bold;letter-spacing:.12em}
+    #opa-archive .opa-photo-fallback small{color:#eee;font-size:10px;letter-spacing:.12em}
+    #opa-archive .opa-photo-caption{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;display:flex;justify-content:space-between;gap:10px;color:#fff;font-size:9px;font-weight:800;letter-spacing:.16em;text-shadow:0 1px 4px #000}
+    #opa-archive .opa-seasons{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+    #opa-archive .opa-season{appearance:none;border:1px solid #505050;background:transparent;color:#ddd;padding:10px 15px;font-size:12px;font-weight:800;cursor:pointer}
+    #opa-archive .opa-season[aria-pressed="true"]{background:var(--papaya);border-color:var(--papaya);color:#111}
+    #opa-archive .opa-tools{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 22px}
+    #opa-archive input,#opa-archive select{background:#191a1c;color:#f5f5f5;border:1px solid #454545;border-radius:0;padding:12px;font-size:13px;min-width:0}
+    #opa-archive input{flex:1 1 190px}
+    #opa-archive select{flex:0 1 190px}
+    #opa-archive .opa-season-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:28px 0 16px;border-bottom:2px solid var(--papaya);padding-bottom:12px}
+    #opa-archive .opa-season-heading h2{font-size:34px;line-height:1;margin:0;font-weight:900;letter-spacing:-.04em}
+    #opa-archive .opa-season-heading p{font-size:10px;color:var(--muted);letter-spacing:.12em;text-align:right;margin:0;text-transform:uppercase}
+    #opa-archive .opa-card{border:1px solid var(--line);margin:0 0 10px;background:var(--panel)}
+    #opa-archive .opa-card summary{cursor:pointer;list-style:none;padding:15px;display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center}
+    #opa-archive .opa-card summary::-webkit-details-marker{display:none}
+    #opa-archive .opa-round{color:var(--papaya);font-size:12px;font-weight:900}
+    #opa-archive .opa-gp{font-size:13px;font-weight:800;letter-spacing:.035em}
+    #opa-archive .opa-meta{font-size:10px;color:var(--muted);margin-top:4px}
+    #opa-archive .opa-status{font-size:9px;color:#111;background:var(--papaya);padding:5px 7px;font-weight:900;white-space:nowrap}
+    #opa-archive .opa-detail{padding:0 15px 16px}
+    #opa-archive .opa-note{font-size:11px;color:#bcbcbc;border-left:2px solid var(--papaya);padding:8px 10px;margin:4px 0 12px}
+    #opa-archive .opa-table{width:100%;border-collapse:collapse;font-size:12px}
+    #opa-archive .opa-table th{font-size:9px;color:var(--muted);font-weight:700;text-align:left;letter-spacing:.1em;text-transform:uppercase;padding:9px 6px;border-bottom:1px solid var(--line)}
+    #opa-archive .opa-table td{padding:10px 6px;border-bottom:1px solid #2c2d2f}
+    #opa-archive .opa-table td:first-child{color:var(--papaya);font-weight:800}
+    #opa-archive .opa-table td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:#ddd}
+    #opa-archive .opa-table .opa-verify{color:#9d9d9d!important;font-style:italic}
+    #opa-archive .opa-foot{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:#888;font-size:10px;letter-spacing:.07em}
+    #opa-archive .opa-foot strong{color:var(--papaya)}
+    #opa-archive .opa-empty{color:var(--muted);padding:24px 0;font-size:13px}
+    @media(max-width:480px){#opa-archive .opa-card summary{grid-template-columns:34px 1fr;gap:8px}#opa-archive .opa-status{grid-column:2;justify-self:start}#opa-archive .opa-season-heading{align-items:flex-start;flex-direction:column}#opa-archive .opa-season-heading p{text-align:left}#opa-archive .opa-photo-hero{height:250px}#opa-archive .opa-table{font-size:11px}#opa-archive .opa-table th,#opa-archive .opa-table td{padding:9px 4px}}
+  </style>
+  <div class="opa-top"><span class="opa-kicker">● The Piastri Files</span><span style="font-size:10px;color:#999;letter-spacing:.1em">MCLAREN · #81</span></div>
+  <header class="opa-hero">
+    <div class="opa-kicker">Formula One career archive</div>
+    <h1>Oscar<br><span>Piastri.</span></h1>
+    <div class="opa-sub">Race weekends · Session timings · Results</div>
+  </header>
+  <div class="opa-photo-hero">
+    <!-- Replace OSCAR_PHOTO_URL with a direct image URL, or add your own Carrd Image element above this embed. -->
+    <img class="opa-oscar-photo" src="OSCAR_PHOTO_URL" alt="Oscar Piastri in McLaren papaya colours" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="opa-photo-fallback"><span class="opa-fallback-kicker">THE PAPAYA YEARS</span><strong>Full throttle.<br>Every round.</strong><small>OSCAR PIASTRI · #81</small></div>
+    <div class="opa-photo-caption"><span>ARCHIVE 081</span><span>F1 / MCLAREN</span></div>
+  </div>
+  <div class="opa-kicker">Select season</div>
+  <nav class="opa-seasons" aria-label="Choose season">
+    <button class="opa-season" data-season="2023" aria-pressed="true">2023</button>
+    <button class="opa-season" data-season="2024" aria-pressed="false">2024</button>
+    <button class="opa-season" data-season="2025" aria-pressed="false">2025</button>
+    <button class="opa-season" data-season="2026" aria-pressed="false">2026</button>
+  </nav>
+  <div class="opa-tools">
+    <input id="opa-search" type="search" placeholder="Search Grand Prix…" aria-label="Search Grand Prix">
+    <select id="opa-filter" aria-label="Filter sessions"><option value="all">All race weekends</option><option value="sprint">Sprint weekends only</option></select>
+  </div>
+  <div id="opa-results" aria-live="polite"></div>
+  <div class="opa-foot"><strong>DATA STATUS: UNVERIFIED TEMPLATE</strong><br>Session positions and lap times are intentionally blank until checked against official Formula 1 results. Event calendar labels are an editable draft; verify the 2026 calendar before publishing.<br><br>FP = Free Practice · Q = Qualifying · SQ = Sprint Qualifying · S = Sprint · DNF = Did Not Finish<br><br>Unofficial fan archive · Not affiliated with McLaren Racing or Formula 1.</div>
+</div>
+<script>
+(function(){
+  const root=document.getElementById('opa-archive');
+  if(!root || root.dataset.ready) return;
+  root.dataset.ready='1';
+  const events={"2023":["BAHRAIN GRAND PRIX","SAUDI ARABIAN GRAND PRIX","AUSTRALIAN GRAND PRIX","AZERBAIJAN GRAND PRIX","MIAMI GRAND PRIX","MONACO GRAND PRIX","SPANISH GRAND PRIX","CANADIAN GRAND PRIX","AUSTRIAN GRAND PRIX","BRITISH GRAND PRIX","HUNGARIAN GRAND PRIX","BELGIAN GRAND PRIX","DUTCH GRAND PRIX","ITALIAN GRAND PRIX","SINGAPORE GRAND PRIX","JAPANESE GRAND PRIX","QATAR GRAND PRIX","UNITED STATES GRAND PRIX","MEXICO CITY GRAND PRIX","SÃO PAULO GRAND PRIX","LAS VEGAS GRAND PRIX","ABU DHABI GRAND PRIX"],"2024":["BAHRAIN GRAND PRIX","SAUDI ARABIAN GRAND PRIX","AUSTRALIAN GRAND PRIX","JAPANESE GRAND PRIX","CHINESE GRAND PRIX","MIAMI GRAND PRIX","EMILIA-ROMAGNA GRAND PRIX","MONACO GRAND PRIX","CANADIAN GRAND PRIX","SPANISH GRAND PRIX","AUSTRIAN GRAND PRIX","BRITISH GRAND PRIX","HUNGARIAN GRAND PRIX","BELGIAN GRAND PRIX","DUTCH GRAND PRIX","ITALIAN GRAND PRIX","AZERBAIJAN GRAND PRIX","SINGAPORE GRAND PRIX","UNITED STATES GRAND PRIX","MEXICO CITY GRAND PRIX","SÃO PAULO GRAND PRIX","LAS VEGAS GRAND PRIX","QATAR GRAND PRIX","ABU DHABI GRAND PRIX"],"2025":["AUSTRALIAN GRAND PRIX","CHINESE GRAND PRIX","JAPANESE GRAND PRIX","BAHRAIN GRAND PRIX","SAUDI ARABIAN GRAND PRIX","MIAMI GRAND PRIX","EMILIA-ROMAGNA GRAND PRIX","MONACO GRAND PRIX","SPANISH GRAND PRIX","CANADIAN GRAND PRIX","AUSTRIAN GRAND PRIX","BRITISH GRAND PRIX","BELGIAN GRAND PRIX","HUNGARIAN GRAND PRIX","DUTCH GRAND PRIX","ITALIAN GRAND PRIX","AZERBAIJAN GRAND PRIX","SINGAPORE GRAND PRIX","UNITED STATES GRAND PRIX","MEXICO CITY GRAND PRIX","SÃO PAULO GRAND PRIX","LAS VEGAS GRAND PRIX","QATAR GRAND PRIX","ABU DHABI GRAND PRIX"],"2026":["AUSTRALIAN GRAND PRIX","CHINESE GRAND PRIX","JAPANESE GRAND PRIX","BAHRAIN GRAND PRIX — VERIFY CALENDAR","SAUDI ARABIAN GRAND PRIX — VERIFY CALENDAR","MIAMI GRAND PRIX","CANADIAN GRAND PRIX","MONACO GRAND PRIX","BARCELONA-CATALUNYA GRAND PRIX","AUSTRIAN GRAND PRIX","BRITISH GRAND PRIX","BELGIAN GRAND PRIX","HUNGARIAN GRAND PRIX","DUTCH GRAND PRIX","ITALIAN GRAND PRIX","MADRID GRAND PRIX","AZERBAIJAN GRAND PRIX","SINGAPORE GRAND PRIX","UNITED STATES GRAND PRIX","MEXICO CITY GRAND PRIX","SÃO PAULO GRAND PRIX","LAS VEGAS GRAND PRIX","QATAR GRAND PRIX","ABU DHABI GRAND PRIX"]};
+  const sprintRounds={
+    "2023":["AZERBAIJAN GRAND PRIX","AUSTRIAN GRAND PRIX","BELGIAN GRAND PRIX","QATAR GRAND PRIX","UNITED STATES GRAND PRIX","SÃO PAULO GRAND PRIX"],
+    "2024":["CHINESE GRAND PRIX","MIAMI GRAND PRIX","AUSTRIAN GRAND PRIX","UNITED STATES GRAND PRIX","SÃO PAULO GRAND PRIX","QATAR GRAND PRIX"],
+    "2025":["CHINESE GRAND PRIX","MIAMI GRAND PRIX","BELGIAN GRAND PRIX","UNITED STATES GRAND PRIX","SÃO PAULO GRAND PRIX","QATAR GRAND PRIX"],
+    "2026":[]
+  };
+  let season='2023';
+  const resultBox=root.querySelector('#opa-results');
+  const search=root.querySelector('#opa-search');
+  const filter=root.querySelector('#opa-filter');
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function sessionRows(isSprint){
+    if(isSprint){
+      return [
+        ['FP1','Position','Best lap'],
+        ['SPRINT QUALI','Position / segments','Best lap'],
+        ['SPRINT','Finish / gap','Fastest lap'],
+        ['QUALIFYING','Position / Q1–Q3','Best lap'],
+        ['RACE','Finish / status','Race time / gap']
+      ];
+    }
+    return [
+      ['FP1','Position','Best lap'],
+      ['FP2','Position','Best lap'],
+      ['FP3','Position','Best lap'],
+      ['QUALIFYING','Position / Q1–Q3','Best lap'],
+      ['RACE','Finish / status','Race time / gap']
+    ];
+  }
+  function render(){
+    const q=search.value.trim().toLowerCase();
+    const onlySprint=filter.value==='sprint';
+    const list=(events[season]||[]).filter(name=>name.toLowerCase().includes(q)).filter(name=>!onlySprint||(sprintRounds[season]||[]).includes(name));
+    const heading=`<div class="opa-season-heading"><h2>${season} <span style="color:var(--papaya)">SEASON</span></h2><p>${list.length} rounds shown · results pending verification</p></div>`;
+    if(!list.length){resultBox.innerHTML=heading+'<div class="opa-empty">No Grand Prix match this search.</div>';return;}
+    resultBox.innerHTML=heading+list.map(name=>{
+      const round=(events[season]||[]).indexOf(name)+1;
+      const isSprint=(sprintRounds[season]||[]).includes(name);
+      const rows=sessionRows(isSprint).map(r=>`<tr><td>${esc(r[0])}</td><td class="opa-verify">VERIFY</td><td class="opa-verify">—</td></tr>`).join('');
+      return `<details class="opa-card"><summary><span class="opa-round">${String(round).padStart(2,'0')}</span><div><div class="opa-gp">${esc(name)}</div><div class="opa-meta">${isSprint?'SPRINT WEEKEND · ':''}SESSION REPORT · ${season}</div></div><span class="opa-status">UNVERIFIED</span></summary><div class="opa-detail"><div class="opa-note">Template only. Replace “VERIFY” and dashes with Oscar’s official session position and fastest lap after checking the FIA/F1 classification.</div><table class="opa-table"><thead><tr><th>Session</th><th>Position / result</th><th>Time / gap</th></tr></thead><tbody>${rows}</tbody></table><p style="font-size:10px;color:#888;margin:12px 0 0">Sprint session list is a draft and must be checked against that season’s official weekend format.</p></div></details>`;
+    }).join('');
+  }
+  root.querySelectorAll('[data-season]').forEach(btn=>btn.addEventListener('click',()=>{
+    season=btn.dataset.season;
+    root.querySelectorAll('[data-season]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+    render();
+  }));
+  search.addEventListener('input',render);
+  filter.addEventListener('change',render);
+  render();
+})();
+</script>
+</body>
+</html>
