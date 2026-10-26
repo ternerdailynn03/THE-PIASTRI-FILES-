@@ -172,7 +172,6 @@
             <td class="${row[4] === '—' || row[4] === 'VERIFY' ? 'opa-verify' : ''}">${esc(row[4])}</td>
           </tr>`;
         }).join('');
-
       return `<details class="opa-card">
         <summary>
           <span class="opa-round">${String(round).padStart(2, '0')}</span>
@@ -201,6 +200,8 @@
         </div>
       </details>`;
     }).join('');
+  }
+
   root.querySelectorAll('[data-season]').forEach(btn=>btn.addEventListener('click',()=>{
     season=btn.dataset.season;
     root.querySelectorAll('[data-season]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
@@ -210,6 +211,7 @@
   filter.addEventListener('change',render);
   render();
 })();
+
 </script>
 </body>
 </html>
