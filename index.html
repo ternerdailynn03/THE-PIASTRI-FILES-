@@ -108,20 +108,21 @@
   };
     // RESULTS: окремі дані для кожного Гран-прі
 
-  const results = {
-    "2023": {
-      "BAHRAIN GRAND PRIX": [
-        ["FP1", "12", "1:34.997"],
-        ["FP2", "VERIFY", "—"],
-        ["FP3", "VERIFY", "—"],
-        ["QUALIFYING", "VERIFY", "—"],
-        ["RACE", "VERIFY", "—"]
-      ]
-    },
-    "2024": {},
-    "2025": {},
-    "2026": {}
-  };
+
+const results = {
+  "2023": {
+    "BAHRAIN GRAND PRIX": [
+      ["FP1", "12", "1:34.997", "+2.239s", "24"],
+      ["FP2", "15", "1:32.024", "+1.117s", "27"],
+      ["FP3", "9", "1:33.045", "+0.705s", "12"],
+      ["QUALIFYING", "18", "1:32.101", "—", "7"],
+      ["RACE", "NC", "-", "	DNF", "13"]
+    ]
+  },
+  "2024": {},
+  "2025": {},
+  "2026": {}
+};
   let season='2023';
   const resultBox=root.querySelector('#opa-results');
   const search=root.querySelector('#opa-search');
