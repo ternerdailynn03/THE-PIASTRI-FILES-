@@ -156,15 +156,53 @@
       const isSprint=(sprintRounds[season]||[]).includes(name);
            const eventData = results[season]?.[name];
 
-      const rows = (eventData || sessionRows(isSprint).map(r => [r[0], "VERIFY", "—"]))
-        .map(r => `<tr>
-          <td>${esc(r[0])}</td>
-          <td class="${r[1] === 'VERIFY' ? 'opa-verify' : ''}">${esc(r[1])}</td>
-          <td class="${r[2] === '—' ? 'opa-verify' : ''}">${esc(r[2])}</td>
-        </tr>`).join('');
-      return `<details class="opa-card"><summary><span class="opa-round">${String(round).padStart(2,'0')}</span><div><div class="opa-gp">${esc(name)}</div><div class="opa-meta">${isSprint?'SPRINT WEEKEND · ':''}SESSION REPORT · ${season}</div></div><span class="opa-status">UNVERIFIED</span></summary><div class="opa-detail"><div class="opa-note">Template only. Replace “VERIFY” and dashes with Oscar’s official session position and fastest lap after checking the FIA/F1 classification.</div><table class="opa-table"><thead><tr><th>Session</th><th>Position / result</th><th>Time / gap</th></tr></thead><tbody>${rows}</tbody></table><p style="font-size:10px;color:#888;margin:12px 0 0">Sprint session list is a draft and must be checked against that season’s official weekend format.</p></div></details>`;
+      const rows = (eventData || sessionRows(isSprint).map(r => [r[0], "VERIFY", "—", "—", "—"]))
+        .map(r => {
+          const row = [
+            r[0],
+            r[1] ?? "VERIFY",
+            r[2] ?? "—",
+            r[3] ?? "—",
+            r[4] ?? "—"
+          ];
+
+          return `<tr>
+            <td>${esc(row[0])}</td>
+            <td class="${row[1] === 'VERIFY' ? 'opa-verify' : ''}">${esc(row[1])}</td>
+            <td class="${row[2] === '—' ? 'opa-verify' : ''}">${esc(row[2])}</td>
+            <td class="${row[3] === '—' || row[3] === 'VERIFY' ? 'opa-verify' : ''}">${esc(row[3])}</td>
+            <td class="${row[4] === '—' || row[4] === 'VERIFY' ? 'opa-verify' : ''}">${esc(row[4])}</td>
+          </tr>`;
+        }).join('');
+
+      return `<details class="opa-card">
+        <summary>
+          <span class="opa-round">${String(round).padStart(2, '0')}</span>
+          <div>
+            <div class="opa-gp">${esc(name)}</div>
+            <div class="opa-meta">${isSprint ? 'SPRINT WEEKEND' : 'GRAND PRIX WEEKEND'}</div>
+          </div>
+          <span class="opa-status">VERIFY DATA</span>
+        </summary>
+        <div class="opa-detail">
+          <div class="opa-note">Results are pending verification. Unconfirmed values are marked VERIFY.</div>
+          <div style="overflow-x:auto">
+            <table class="opa-table">
+              <thead>
+                <tr>
+                  <th>Session</th>
+                  <th>Position</th>
+                  <th>Lap time</th>
+                  <th>Gap to P1</th>
+                  <th>Laps</th>
+                </tr>
+              </thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        </div>
+      </details>`;
     }).join('');
-  }
   root.querySelectorAll('[data-season]').forEach(btn=>btn.addEventListener('click',()=>{
     season=btn.dataset.season;
     root.querySelectorAll('[data-season]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
