@@ -155,7 +155,6 @@
       const round=(events[season]||[]).indexOf(name)+1;
       const isSprint=(sprintRounds[season]||[]).includes(name);
            const eventData = results[season]?.[name];
-
       const rows = (eventData || sessionRows(isSprint).map(r => [r[0], "VERIFY", "—", "—", "—"]))
         .map(r => {
           const row = [
@@ -165,7 +164,6 @@
             r[3] ?? "—",
             r[4] ?? "—"
           ];
-
           return `<tr>
             <td>${esc(row[0])}</td>
             <td class="${row[1] === 'VERIFY' ? 'opa-verify' : ''}">${esc(row[1])}</td>
