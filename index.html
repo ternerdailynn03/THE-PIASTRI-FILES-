@@ -251,7 +251,7 @@ function render() {
       sprintQuali.laps ?? "VERIFY"
     ]];
 
-    const sprint = data.sprint || {};
+  const sprint = data.sprint || {};
     const sprintRows = [[
       sprint.position ?? "VERIFY",
       sprint.time ?? "VERIFY",
@@ -260,14 +260,14 @@ function render() {
       sprint.points ?? "VERIFY"
     ]];
 
-const raceRows = [[
-  race.position ?? "VERIFY",
-  race.time ?? "VERIFY",
-  race.gap ?? "VERIFY",
-  race.points ?? "VERIFY",
-  race.laps ?? "VERIFY"
-]];
-
+    const race = data.race || {};
+    const raceRows = [[
+      race.position ?? "VERIFY",
+      race.time ?? "VERIFY",
+      race.gap ?? "VERIFY",
+      race.points ?? "VERIFY",
+      race.laps ?? "VERIFY"
+    ]];
     let tables = table(
       "PRACTICE",
       ["Session", "Position", "Best lap", "Gap to P1", "Laps"],
