@@ -24,14 +24,221 @@
     #opa-archive h1{font-size:clamp(38px,8vw,76px);line-height:.91;letter-spacing:-.055em;margin:12px 0 15px;font-weight:900;text-transform:uppercase}
     #opa-archive h1 span{color:var(--papaya)}
     #opa-archive .opa-sub{font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
-    #opa-archive .opa-photo-hero{height:clamp(220px,48vw,390px);margin:18px 0 24px;position:relative;overflow:hidden;background:linear-gradient(120deg,#ff8000 0%,#d95800 45%,#28211c 45%,#171819 100%)}
-    #opa-archive .opa-oscar-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(.9);position:absolute;inset:0}
-    #opa-archive .opa-photo-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.08) 35%,rgba(0,0,0,.76) 100%),linear-gradient(0deg,rgba(0,0,0,.82),transparent 58%);pointer-events:none}
-    #opa-archive .opa-photo-fallback{display:none;position:absolute;inset:0;padding:22px;flex-direction:column;justify-content:flex-end;gap:8px;background:linear-gradient(120deg,#ff8000 0%,#d95800 46%,#28211c 46%,#171819 100%);z-index:1}
-    #opa-archive .opa-photo-fallback strong{font-size:clamp(25px,5vw,42px);line-height:.95;text-transform:uppercase;color:#111;letter-spacing:-.04em}
-    #opa-archive .opa-fallback-kicker{font-size:10px;color:#171717;font-weight:bold;letter-spacing:.12em}
-    #opa-archive .opa-photo-fallback small{color:#eee;font-size:10px;letter-spacing:.12em}
-    #opa-archive .opa-photo-caption{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;display:flex;justify-content:space-between;gap:10px;color:#fff;font-size:9px;font-weight:800;letter-spacing:.16em;text-shadow:0 1px 4px #000}
+
+/* НОВА ШАПКА THE PIASTRI FILES */
+
+#opa-archive .opa-photo-hero {
+  height: clamp(310px, 48vw, 390px);
+  margin: 18px 0 24px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 78% 48%, rgba(255,128,0,.25), transparent 43%),
+    linear-gradient(115deg, #080808 0%, #17100c 48%, #351506 100%);
+  border-top: 1px solid rgba(255,128,0,.55);
+  border-bottom: 2px solid #ff8000;
+}
+
+#opa-archive .opa-hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .34;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 24px,
+    rgba(255,128,0,.16) 25px 27px,
+    transparent 28px 52px
+  );
+}
+
+#opa-archive .opa-hero-lines {
+  position: absolute;
+  top: 0;
+  right: 31%;
+  width: 110px;
+  height: 100%;
+  opacity: .7;
+  transform: skewX(-20deg);
+  border-left: 1px solid rgba(255,128,0,.35);
+  border-right: 1px solid rgba(255,128,0,.2);
+  pointer-events: none;
+}
+
+#opa-archive .opa-hero-lines span {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: rgba(255,128,0,.2);
+}
+
+#opa-archive .opa-hero-lines span:nth-child(1) { left: 25px; }
+#opa-archive .opa-hero-lines span:nth-child(2) { left: 52px; }
+#opa-archive .opa-hero-lines span:nth-child(3) { left: 79px; }
+
+#opa-archive .opa-hero-info {
+  position: absolute;
+  z-index: 2;
+  left: 6%;
+  top: 50%;
+  width: 57%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+#opa-archive .opa-hero-eyebrow {
+  margin-bottom: 4px;
+  color: #ff8000;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+#opa-archive .opa-hero-firstname {
+  margin: 0 0 -17px -3px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(45px, 7vw, 76px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+#opa-archive .opa-hero-surname {
+  margin: 0;
+  color: #ff8000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(36px, 6.3vw, 70px);
+  font-weight: 950;
+  letter-spacing: 2px;
+  line-height: 1.05;
+}
+
+#opa-archive .opa-hero-country {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 15px;
+  color: #eee;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+#opa-archive .opa-hero-flag {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+#opa-archive .opa-hero-divider { color: #ff8000; }
+
+#opa-archive .opa-hero-number {
+  margin-top: 12px;
+  color: rgba(255,255,255,.13);
+  font-size: 38px;
+  font-weight: 950;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+#opa-archive .opa-hero-tagline {
+  margin-top: 12px;
+  color: #ccc;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+#opa-archive .opa-oscar-photo {
+  position: absolute;
+  z-index: 1;
+  right: 1%;
+  bottom: 0;
+  width: 48%;
+  height: 96%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(-12px 0 22px rgba(0,0,0,.45));
+  pointer-events: none;
+}
+
+#opa-archive .opa-hero-bottom {
+  position: absolute;
+  z-index: 3;
+  right: 18px;
+  bottom: 12px;
+  left: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: rgba(255,255,255,.65);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+@media (max-width: 520px) {
+  #opa-archive .opa-photo-hero {
+    height: 310px;
+  }
+
+  #opa-archive .opa-hero-info {
+    left: 5%;
+    width: 67%;
+  }
+
+  #opa-archive .opa-hero-eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  #opa-archive .opa-hero-firstname {
+    margin-bottom: -9px;
+    font-size: 48px;
+  }
+
+  #opa-archive .opa-hero-surname {
+    font-size: clamp(31px, 8vw, 43px);
+    letter-spacing: 0;
+  }
+
+  #opa-archive .opa-hero-country {
+    gap: 5px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  #opa-archive .opa-hero-number { font-size: 30px; }
+
+  #opa-archive .opa-hero-tagline {
+    max-width: 190px;
+    font-size: 7px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+  }
+
+  #opa-archive .opa-oscar-photo {
+    right: -8%;
+    width: 59%;
+    height: 86%;
+  }
+
+  #opa-archive .opa-hero-lines {
+    right: 22%;
+    opacity: .4;
+  }
+
+  #opa-archive .opa-hero-bottom {
+    right: 10px;
+    bottom: 8px;
+    left: 10px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
     #opa-archive .opa-seasons{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
     #opa-archive .opa-season{appearance:none;border:1px solid #505050;background:transparent;color:#ddd;padding:10px 15px;font-size:12px;font-weight:800;cursor:pointer}
     #opa-archive .opa-season[aria-pressed="true"]{background:var(--papaya);border-color:var(--papaya);color:#111}
@@ -102,11 +309,50 @@
     <h1>Oscar<br><span>Piastri</span></h1>
     <div class="opa-sub">Race weekends · Session timings · Results</div>
   </header>
-  <div class="opa-photo-hero">
-    <!-- Replace OSCAR_PHOTO_URL with a direct image URL, or add your own Carrd Image element above this embed. -->
-    <img class="opa-oscar-photo" src="OSCAR_PHOTO_URL" alt="Oscar Piastri in McLaren papaya colours" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-       <div class="opa-photo-fallback"><span class="opa-fallback-kicker">ALL YEARS</span><strong>EVERY ROUND<br>ALL POSITIONS</strong><small>OSCAR PIASTRI · #81</small></div>
-    <div class="opa-photo-caption">
+
+<div class="opa-photo-hero">
+  <div class="opa-hero-pattern"></div>
+
+  <div class="opa-hero-lines" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="opa-hero-info">
+    <div class="opa-hero-eyebrow">
+      FORMULA ONE · CAREER ARCHIVE
+    </div>
+
+    <div class="opa-hero-firstname">Oscar</div>
+    <h2 class="opa-hero-surname">PIASTRI</h2>
+
+    <div class="opa-hero-country">
+      <span class="opa-hero-flag">🇦🇺</span>
+      <span>AUSTRALIA</span>
+      <span class="opa-hero-divider">/</span>
+      <span>MCLAREN</span>
+    </div>
+
+    <div class="opa-hero-number">#81</div>
+
+    <div class="opa-hero-tagline">
+      EVERY ROUND. EVERY SESSION. EVERY RESULT.
+    </div>
+  </div>
+
+  <img
+    class="opa-oscar-photo"
+    src="YOUR_OSCAR_PNG_URL"
+    alt="Oscar Piastri"
+  >
+
+  <div class="opa-hero-bottom">
+    <span>THE PIASTRI FILES</span>
+    <span>EST. 2023</span>
+  </div>
+</div>
+
     </div>
   </div>
   <div class="opa-kicker">Select season</div>
