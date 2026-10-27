@@ -260,13 +260,13 @@ function render() {
       sprint.points ?? "VERIFY"
     ]];
 
-    const race = data.race || {};
-    const raceRows = [[
-      race.position ?? "VERIFY",
-      race.time ?? "VERIFY",
-      race.points ?? "VERIFY",
-      race.laps ?? "VERIFY"
-    ]];
+const raceRows = [[
+  race.position ?? "VERIFY",
+  race.time ?? "VERIFY",
+  race.gap ?? "VERIFY",
+  race.points ?? "VERIFY",
+  race.laps ?? "VERIFY"
+]];
 
     let tables = table(
       "PRACTICE",
@@ -294,11 +294,11 @@ function render() {
       qualifyingRows
     );
 
-    tables += table(
-      "RACE",
-      ["Position", "Time / status", "Points", "Laps"],
-      raceRows
-    );
+tables += table(
+  "RACE",
+  ["Position", "Time / status", "Gap to P1", "Points", "Laps"],
+  raceRows
+);
 
     return `
       <details class="opa-card">
