@@ -51,7 +51,24 @@
     #opa-archive .opa-status{font-size:9px;color:#111;background:var(--papaya);padding:5px 7px;font-weight:900;white-space:nowrap}
     #opa-archive .opa-detail{padding:0 15px 16px}
     #opa-archive .opa-note{font-size:11px;color:#bcbcbc;border-left:2px solid var(--papaya);padding:8px 10px;margin:4px 0 12px}
-    #opa-archive .opa-table{width:100%;border-collapse:collapse;font-size:12px}
+#opa-archive .opa-table{
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  font-size:12px;
+}
+
+#opa-archive .opa-table th,
+#opa-archive .opa-table td{
+  width:auto;
+  overflow-wrap:anywhere;
+  vertical-align:middle;
+}
+
+#opa-archive .opa-table th:first-child,
+#opa-archive .opa-table td:first-child{
+  text-align:left;
+}
     #opa-archive .opa-table th{font-size:9px;color:var(--muted);font-weight:700;text-align:left;letter-spacing:.1em;text-transform:uppercase;padding:9px 6px;border-bottom:1px solid var(--line)}
     #opa-archive .opa-table td{padding:10px 6px;border-bottom:1px solid #2c2d2f}
 #opa-archive .opa-table td:first-child{
