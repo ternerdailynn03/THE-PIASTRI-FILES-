@@ -25,50 +25,36 @@
     #opa-archive h1 span{color:var(--papaya)}
     #opa-archive .opa-sub{font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
 
-/* HERO BANNER — compact slogan + four overlapping season portraits */
+/* HERO BANNER — one Oscar photo, white bold slogan */
 #opa-archive .opa-photo-hero {
-  height: clamp(300px, 34vw, 360px);
+  height: clamp(300px, 34vw, 390px);
+  min-height: 250px;
   margin: 18px 0 24px;
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background:
-    radial-gradient(ellipse at 78% 48%, rgba(255,128,0,.24), transparent 43%),
-    linear-gradient(115deg, #080808 0%, #17100c 48%, #351506 100%);
+  background-color: #080808;
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.04) 48%, transparent 100%),
+    url("./oscar-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-top: 1px solid rgba(255,128,0,.55);
   border-bottom: 2px solid #ff8000;
 }
-#opa-archive .opa-hero-pattern {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: .34;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(135deg, transparent 0 24px, rgba(255,128,0,.16) 25px 27px, transparent 28px 52px);
-}
+
+#opa-archive .opa-hero-pattern,
 #opa-archive .opa-hero-lines {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 31%;
-  width: 110px;
-  height: 100%;
-  opacity: .55;
-  transform: skewX(-20deg);
-  border-left: 1px solid rgba(255,128,0,.35);
-  border-right: 1px solid rgba(255,128,0,.2);
-  pointer-events: none;
+  display: none;
 }
-#opa-archive .opa-hero-lines span {position:absolute;top:0;height:100%;width:1px;background:rgba(255,128,0,.2)}
-#opa-archive .opa-hero-lines span:nth-child(1) {left:25px}
-#opa-archive .opa-hero-lines span:nth-child(2) {left:52px}
-#opa-archive .opa-hero-lines span:nth-child(3) {left:79px}
+
 #opa-archive .opa-hero-info {
   position: absolute;
-  z-index: 4;
-  left: 6%;
+  z-index: 2;
+  left: 4.5%;
   top: 50%;
-  width: 48%;
+  width: 53%;
   transform: translateY(-50%);
   color: #fff;
 }
@@ -82,6 +68,7 @@
   font-weight: 900;
   letter-spacing: -.035em;
   line-height: 1.05;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 
 #opa-archive .opa-hero-surname {
@@ -89,9 +76,11 @@
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(25px, 3.4vw, 52px);
+  font-style: normal;
   font-weight: 900;
   letter-spacing: -.035em;
   line-height: 1.12;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 
 #opa-archive .opa-hero-country {
@@ -115,7 +104,6 @@
   color: #ff8000;
 }
 
-/* Старі фотографії окремих сезонів більше не використовуються */
 #opa-archive .opa-season-photos,
 #opa-archive .opa-oscar-photo {
   display: none;
@@ -149,6 +137,7 @@
   #opa-archive .opa-hero-flag {
     font-size: 14px;
   }
+}
 
 #opa-archive .opa-seasons{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
     #opa-archive .opa-season{appearance:none;border:1px solid #505050;background:transparent;color:#ddd;padding:10px 15px;font-size:12px;font-weight:800;cursor:pointer}
@@ -212,7 +201,7 @@
     #opa-archive .opa-foot{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:#888;font-size:10px;letter-spacing:.07em}
     #opa-archive .opa-foot strong{color:var(--papaya)}
     #opa-archive .opa-empty{color:var(--muted);padding:24px 0;font-size:13px}
-    @media(max-width:480px){#opa-archive .opa-card summary{grid-template-columns:34px 1fr;gap:8px}#opa-archive .opa-status{grid-column:2;justify-self:start}#opa-archive .opa-season-heading{align-items:flex-start;flex-direction:column}#opa-archive .opa-season-heading p{text-align:left}#opa-archive .opa-photo-hero{height:270px}#opa-archive .opa-table{font-size:11px}#opa-archive .opa-table th,#opa-archive .opa-table td{padding:9px 4px}}
+    @media(max-width:480px){#opa-archive .opa-card summary{grid-template-columns:34px 1fr;gap:8px}#opa-archive .opa-status{grid-column:2;justify-self:start}#opa-archive .opa-season-heading{align-items:flex-start;flex-direction:column}#opa-archive .opa-season-heading p{text-align:left}#opa-archive .opa-photo-hero{height:250px;min-height:250px}#opa-archive .opa-table{font-size:11px}#opa-archive .opa-table th,#opa-archive .opa-table td{padding:9px 4px}}
   </style>
   <div class="opa-top"><span class="opa-kicker">● The Piastri Files</span><span style="font-size:10px;color:#999;letter-spacing:.1em">MCLAREN · #81</span></div>
   <header class="opa-hero">
@@ -223,9 +212,6 @@
 
 
 <div class="opa-photo-hero">
-  <div class="opa-hero-pattern" aria-hidden="true"></div>
-  <div class="opa-hero-lines" aria-hidden="true"><span></span><span></span><span></span></div>
-
   <div class="opa-hero-info">
     <div class="opa-hero-firstname">EVERY ROUND.</div>
     <h2 class="opa-hero-surname">EVERY SESSION.<br>EVERY RESULT.</h2>
@@ -235,13 +221,6 @@
       <span class="opa-hero-divider">/</span>
       <span>MCLAREN</span>
     </div>
-  </div>
-
-  <div class="opa-season-photos" aria-label="Oscar Piastri across the 2023, 2024, 2025 and 2026 seasons">
-    <img class="opa-season-photo opa-season-photo-2023" src="./season-2023.png" alt="Oscar Piastri in the 2023 McLaren suit">
-    <img class="opa-season-photo opa-season-photo-2024" src="./season-2024.png" alt="Oscar Piastri in the 2024 McLaren suit">
-    <img class="opa-season-photo opa-season-photo-2025" src="./season-2025.png" alt="Oscar Piastri in the 2025 McLaren suit">
-    <img class="opa-season-photo opa-season-photo-2026" src="./season-2026.png" alt="Oscar Piastri in the 2026 McLaren suit">
   </div>
 </div>
 <div class="opa-kicker">Select season</div>
