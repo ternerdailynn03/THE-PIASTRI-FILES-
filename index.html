@@ -72,71 +72,84 @@
   transform: translateY(-50%);
   color: #fff;
 }
+
 #opa-archive .opa-hero-firstname {
-  margin: 0 0 2px 0;
-  color: #ff8000;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(22px, 3.2vw, 32px);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.1;
+  margin: 0 0 8px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(25px, 3.4vw, 52px);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -.035em;
+  line-height: 1.05;
 }
+
 #opa-archive .opa-hero-surname {
   margin: 0;
-  color: #ff8000;
+  color: #fff;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(22px, 3.2vw, 32px);
+  font-size: clamp(25px, 3.4vw, 52px);
   font-weight: 900;
-  letter-spacing: 1px;
-  line-height: 1.1;
+  letter-spacing: -.035em;
+  line-height: 1.12;
 }
+
 #opa-archive .opa-hero-country {
   display: flex;
   align-items: center;
   gap: 9px;
-  margin-top: 15px;
-  color: #eee;
+  margin-top: 20px;
+  color: #fff;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 2px;
+  text-shadow: 0 1px 8px #000;
 }
-#opa-archive .opa-hero-flag {font-size:18px;letter-spacing:0}
-#opa-archive .opa-hero-divider {color:#ff8000}
-#opa-archive .opa-season-photos {
-  position: absolute;
-  z-index: 2;
-  inset: 0 0 0 42%;
-  pointer-events: none;
+
+#opa-archive .opa-hero-flag {
+  font-size: 18px;
+  letter-spacing: 0;
 }
-#opa-archive .opa-season-photo {
-  position: absolute;
-  bottom: 0;
-  height: 96%;
-  width: 47%;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(-8px 0 13px rgba(0,0,0,.35));
+
+#opa-archive .opa-hero-divider {
+  color: #ff8000;
 }
-/* Left to right: 2023, 2024, 2025, 2026. The figures overlap intentionally. */
-#opa-archive .opa-season-photo-2023 {left: 0%; z-index: 1; height: 78%; width: 39%}
-#opa-archive .opa-season-photo-2024 {left: 15%; z-index: 2; height: 76%; width: 39%}
-#opa-archive .opa-season-photo-2025 {left: 30%; z-index: 3; height: 88%; width: 41%}
-#opa-archive .opa-season-photo-2026 {left: 45%; z-index: 4; height: 98%; width: 43%}
-@media (max-width: 520px) {
-  #opa-archive .opa-photo-hero {height: 270px}
-  #opa-archive .opa-hero-info {left: 5%;width: 49%}
-  #opa-archive .opa-hero-firstname {font-size: 21px;margin-bottom:2px}
-  #opa-archive .opa-hero-surname {font-size: 21px;letter-spacing:0}
-  #opa-archive .opa-hero-country {gap:4px;margin-top:11px;font-size:7px;letter-spacing:.7px}
-  #opa-archive .opa-hero-flag {font-size:14px}
-  #opa-archive .opa-season-photos {left: 40%}
-  #opa-archive .opa-season-photo {height: 86%;width: 55%}
-  #opa-archive .opa-season-photo-2023 {left:-8%;height:65%;width:57%}
-  #opa-archive .opa-season-photo-2024 {left:8%;height:70%;width:57%}
-  #opa-archive .opa-season-photo-2025 {left:24%;height:79%;width:59%}
-  #opa-archive .opa-season-photo-2026 {left:40%;height:89%;width:60%}
-  #opa-archive .opa-hero-lines {right:22%;opacity:.35}
+
+/* Старі фотографії окремих сезонів більше не використовуються */
+#opa-archive .opa-season-photos,
+#opa-archive .opa-oscar-photo {
+  display: none;
 }
+
+@media (max-width: 600px) {
+  #opa-archive .opa-photo-hero {
+    height: 250px;
+    min-height: 250px;
+    background-position: center;
+  }
+
+  #opa-archive .opa-hero-info {
+    left: 4%;
+    width: 54%;
+  }
+
+  #opa-archive .opa-hero-firstname,
+  #opa-archive .opa-hero-surname {
+    font-size: clamp(19px, 4.5vw, 28px);
+    letter-spacing: -.025em;
+  }
+
+  #opa-archive .opa-hero-country {
+    gap: 5px;
+    margin-top: 12px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  #opa-archive .opa-hero-flag {
+    font-size: 14px;
+  }
+
 #opa-archive .opa-seasons{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
     #opa-archive .opa-season{appearance:none;border:1px solid #505050;background:transparent;color:#ddd;padding:10px 15px;font-size:12px;font-weight:800;cursor:pointer}
     #opa-archive .opa-season[aria-pressed="true"]{background:var(--papaya);border-color:var(--papaya);color:#111}
