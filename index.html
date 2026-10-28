@@ -25,97 +25,71 @@
     #opa-archive h1 span{color:var(--papaya)}
     #opa-archive .opa-sub{font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
 
-/* НОВА ШАПКА THE PIASTRI FILES */
-
+/* HERO BANNER — compact slogan + four overlapping season portraits */
 #opa-archive .opa-photo-hero {
-  height: clamp(310px, 48vw, 390px);
+  height: clamp(300px, 34vw, 360px);
   margin: 18px 0 24px;
   position: relative;
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(ellipse at 78% 48%, rgba(255,128,0,.25), transparent 43%),
+    radial-gradient(ellipse at 78% 48%, rgba(255,128,0,.24), transparent 43%),
     linear-gradient(115deg, #080808 0%, #17100c 48%, #351506 100%);
   border-top: 1px solid rgba(255,128,0,.55);
   border-bottom: 2px solid #ff8000;
 }
-
 #opa-archive .opa-hero-pattern {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   opacity: .34;
-  background-image: repeating-linear-gradient(
-    135deg,
-    transparent 0 24px,
-    rgba(255,128,0,.16) 25px 27px,
-    transparent 28px 52px
-  );
+  pointer-events: none;
+  background-image: repeating-linear-gradient(135deg, transparent 0 24px, rgba(255,128,0,.16) 25px 27px, transparent 28px 52px);
 }
-
 #opa-archive .opa-hero-lines {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 31%;
   width: 110px;
   height: 100%;
-  opacity: .7;
+  opacity: .55;
   transform: skewX(-20deg);
   border-left: 1px solid rgba(255,128,0,.35);
   border-right: 1px solid rgba(255,128,0,.2);
   pointer-events: none;
 }
-
-#opa-archive .opa-hero-lines span {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 1px;
-  background: rgba(255,128,0,.2);
-}
-
-#opa-archive .opa-hero-lines span:nth-child(1) { left: 25px; }
-#opa-archive .opa-hero-lines span:nth-child(2) { left: 52px; }
-#opa-archive .opa-hero-lines span:nth-child(3) { left: 79px; }
-
+#opa-archive .opa-hero-lines span {position:absolute;top:0;height:100%;width:1px;background:rgba(255,128,0,.2)}
+#opa-archive .opa-hero-lines span:nth-child(1) {left:25px}
+#opa-archive .opa-hero-lines span:nth-child(2) {left:52px}
+#opa-archive .opa-hero-lines span:nth-child(3) {left:79px}
 #opa-archive .opa-hero-info {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   left: 6%;
   top: 50%;
-  width: 57%;
+  width: 48%;
   transform: translateY(-50%);
   color: #fff;
 }
-
-#opa-archive .opa-hero-eyebrow {
-  margin-bottom: 4px;
-  color: #ff8000;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 3px;
-}
-
 #opa-archive .opa-hero-firstname {
-  margin: 0 0 -17px -3px;
-  color: #fff;
+  margin: 0 0 2px 0;
+  color: #ff8000;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(45px, 7vw, 76px);
+  font-size: clamp(22px, 3.2vw, 32px);
   font-style: italic;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.1;
 }
-
 #opa-archive .opa-hero-surname {
   margin: 0;
   color: #ff8000;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(36px, 6.3vw, 70px);
-  font-weight: 950;
-  letter-spacing: 2px;
-  line-height: 1.05;
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.1;
 }
-
 #opa-archive .opa-hero-country {
   display: flex;
   align-items: center;
@@ -126,126 +100,44 @@
   font-weight: 800;
   letter-spacing: 2px;
 }
-
-#opa-archive .opa-hero-flag {
-  font-size: 18px;
-  letter-spacing: 0;
-}
-
-#opa-archive .opa-hero-divider { color: #ff8000; }
-
-#opa-archive .opa-hero-number {
-  margin-top: 12px;
-  color: rgba(255,255,255,.13);
-  font-size: 38px;
-  font-weight: 950;
-  letter-spacing: 3px;
-  line-height: 1;
-}
-
-#opa-archive .opa-hero-tagline {
-  margin-top: 12px;
-  color: #ccc;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1.7px;
-}
-
-#opa-archive .opa-oscar-photo {
+#opa-archive .opa-hero-flag {font-size:18px;letter-spacing:0}
+#opa-archive .opa-hero-divider {color:#ff8000}
+#opa-archive .opa-season-photos {
   position: absolute;
-  z-index: 1;
-  right: 1%;
+  z-index: 2;
+  inset: 0 0 0 42%;
+  pointer-events: none;
+}
+#opa-archive .opa-season-photo {
+  position: absolute;
   bottom: 0;
-  width: 48%;
   height: 96%;
+  width: 47%;
   object-fit: contain;
   object-position: center bottom;
-  filter: drop-shadow(-12px 0 22px rgba(0,0,0,.45));
-  pointer-events: none;
+  filter: drop-shadow(-8px 0 13px rgba(0,0,0,.35));
 }
-
-#opa-archive .opa-hero-bottom {
-  position: absolute;
-  z-index: 3;
-  right: 18px;
-  bottom: 12px;
-  left: 18px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  color: rgba(255,255,255,.65);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  pointer-events: none;
-}
-
+/* Left to right: 2023, 2024, 2025, 2026. The figures overlap intentionally. */
+#opa-archive .opa-season-photo-2023 {left: 0%; z-index: 1; height: 78%; width: 39%}
+#opa-archive .opa-season-photo-2024 {left: 15%; z-index: 2; height: 76%; width: 39%}
+#opa-archive .opa-season-photo-2025 {left: 30%; z-index: 3; height: 88%; width: 41%}
+#opa-archive .opa-season-photo-2026 {left: 45%; z-index: 4; height: 98%; width: 43%}
 @media (max-width: 520px) {
-  #opa-archive .opa-photo-hero {
-    height: 310px;
-  }
-
-  #opa-archive .opa-hero-info {
-    left: 5%;
-    width: 67%;
-  }
-
-  #opa-archive .opa-hero-eyebrow {
-    font-size: 8px;
-    letter-spacing: 1.5px;
-  }
-
-  
-
-  #opa-archive .opa-hero-firstname {
-    margin-bottom: 2px;
-    font-size: 23px;
-    color: #ff8000;
-  }
-
-  #opa-archive .opa-hero-surname {
-    font-size: 23px;
-    letter-spacing: 0;
-    color: #ff8000;
-  }
-
-
-
-  #opa-archive .opa-hero-country {
-    gap: 5px;
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-
-  #opa-archive .opa-hero-number { font-size: 30px; }
-
-  #opa-archive .opa-hero-tagline {
-    max-width: 190px;
-    font-size: 7px;
-    line-height: 1.6;
-    letter-spacing: 1px;
-  }
-
-  #opa-archive .opa-oscar-photo {
-    right: -8%;
-    width: 59%;
-    height: 86%;
-  }
-
-  #opa-archive .opa-hero-lines {
-    right: 22%;
-    opacity: .4;
-  }
-
-  #opa-archive .opa-hero-bottom {
-    right: 10px;
-    bottom: 8px;
-    left: 10px;
-    font-size: 7px;
-    letter-spacing: 1px;
-  }
+  #opa-archive .opa-photo-hero {height: 270px}
+  #opa-archive .opa-hero-info {left: 5%;width: 49%}
+  #opa-archive .opa-hero-firstname {font-size: 21px;margin-bottom:2px}
+  #opa-archive .opa-hero-surname {font-size: 21px;letter-spacing:0}
+  #opa-archive .opa-hero-country {gap:4px;margin-top:11px;font-size:7px;letter-spacing:.7px}
+  #opa-archive .opa-hero-flag {font-size:14px}
+  #opa-archive .opa-season-photos {left: 40%}
+  #opa-archive .opa-season-photo {height: 86%;width: 55%}
+  #opa-archive .opa-season-photo-2023 {left:-8%;height:65%;width:57%}
+  #opa-archive .opa-season-photo-2024 {left:8%;height:70%;width:57%}
+  #opa-archive .opa-season-photo-2025 {left:24%;height:79%;width:59%}
+  #opa-archive .opa-season-photo-2026 {left:40%;height:89%;width:60%}
+  #opa-archive .opa-hero-lines {right:22%;opacity:.35}
 }
-    #opa-archive .opa-seasons{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+#opa-archive .opa-seasons{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
     #opa-archive .opa-season{appearance:none;border:1px solid #505050;background:transparent;color:#ddd;padding:10px 15px;font-size:12px;font-weight:800;cursor:pointer}
     #opa-archive .opa-season[aria-pressed="true"]{background:var(--papaya);border-color:var(--papaya);color:#111}
     #opa-archive .opa-tools{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 22px}
@@ -307,7 +199,7 @@
     #opa-archive .opa-foot{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:#888;font-size:10px;letter-spacing:.07em}
     #opa-archive .opa-foot strong{color:var(--papaya)}
     #opa-archive .opa-empty{color:var(--muted);padding:24px 0;font-size:13px}
-    @media(max-width:480px){#opa-archive .opa-card summary{grid-template-columns:34px 1fr;gap:8px}#opa-archive .opa-status{grid-column:2;justify-self:start}#opa-archive .opa-season-heading{align-items:flex-start;flex-direction:column}#opa-archive .opa-season-heading p{text-align:left}#opa-archive .opa-photo-hero{height:250px}#opa-archive .opa-table{font-size:11px}#opa-archive .opa-table th,#opa-archive .opa-table td{padding:9px 4px}}
+    @media(max-width:480px){#opa-archive .opa-card summary{grid-template-columns:34px 1fr;gap:8px}#opa-archive .opa-status{grid-column:2;justify-self:start}#opa-archive .opa-season-heading{align-items:flex-start;flex-direction:column}#opa-archive .opa-season-heading p{text-align:left}#opa-archive .opa-photo-hero{height:270px}#opa-archive .opa-table{font-size:11px}#opa-archive .opa-table th,#opa-archive .opa-table td{padding:9px 4px}}
   </style>
   <div class="opa-top"><span class="opa-kicker">● The Piastri Files</span><span style="font-size:10px;color:#999;letter-spacing:.1em">MCLAREN · #81</span></div>
   <header class="opa-hero">
@@ -318,39 +210,28 @@
 
 
 <div class="opa-photo-hero">
-  <div class="opa-hero-pattern"></div>
-
-  <div class="opa-hero-lines" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <div class="opa-hero-pattern" aria-hidden="true"></div>
+  <div class="opa-hero-lines" aria-hidden="true"><span></span><span></span><span></span></div>
 
   <div class="opa-hero-info">
-    <div class="opa-hero-eyebrow">
-    
-    </div>
-
-    <div class="opa-hero-firstname">  EVERY ROUND.</div>
-    <h2 class="opa-hero-surname">EVERY SESSION. EVERY RESULT.</h2>
-
+    <div class="opa-hero-firstname">EVERY ROUND.</div>
+    <h2 class="opa-hero-surname">EVERY SESSION.<br>EVERY RESULT.</h2>
     <div class="opa-hero-country">
       <span class="opa-hero-flag">🇦🇺</span>
       <span>AUSTRALIA</span>
       <span class="opa-hero-divider">/</span>
       <span>MCLAREN</span>
     </div>
-
-
   </div>
 
-  <img
-    class="opa-oscar-photo"
-    src="YOUR_OSCAR_PNG_URL"
-    alt="Oscar Piastri"
-  >
-
-  <div class="opa-kicker">Select season</div>
+  <div class="opa-season-photos" aria-label="Oscar Piastri across the 2023, 2024, 2025 and 2026 seasons">
+    <img class="opa-season-photo opa-season-photo-2023" src="./season-2023.png" alt="Oscar Piastri in the 2023 McLaren suit">
+    <img class="opa-season-photo opa-season-photo-2024" src="./season-2024.png" alt="Oscar Piastri in the 2024 McLaren suit">
+    <img class="opa-season-photo opa-season-photo-2025" src="./season-2025.png" alt="Oscar Piastri in the 2025 McLaren suit">
+    <img class="opa-season-photo opa-season-photo-2026" src="./season-2026.png" alt="Oscar Piastri in the 2026 McLaren suit">
+  </div>
+</div>
+<div class="opa-kicker">Select season</div>
   <nav class="opa-seasons" aria-label="Choose season">
     <button class="opa-season" data-season="2023" aria-pressed="true">2023</button>
     <button class="opa-season" data-season="2024" aria-pressed="false">2024</button>
