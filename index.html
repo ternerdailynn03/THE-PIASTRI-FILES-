@@ -358,7 +358,7 @@ function render() {
     if (isSprint) {
       tables += table(
         "SPRINT QUALIFYING",
-        ["Position", "SQ1", "SQ2", "SQ3", "Laps"],
+        ["Position", "Time in SQ1", "Time in SQ2", "Time in SQ3", "Laps"],
         sprintQualiRows
       );
 
@@ -371,7 +371,7 @@ function render() {
 
     tables += table(
       "QUALIFYING",
-      ["Position", "Q1", "Q2", "Q3", "Laps"],
+      ["Position", "Time in Q1", "Time in Q2", "Time in Q3", "Laps"],
       qualifyingRows
     );
 
