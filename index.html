@@ -444,28 +444,27 @@ function render() {
           )).length;
     const isSprint = (sprintRounds[season] || []).includes(name);
     const data = results[season]?.[name] || {};
-        if (data.status === "CANCELLED") {
+    
+    if (data.status === "CANCELLED") {
       return `
-        <details class="opa-card">
+        <details class="card">
           <summary>
-            <span class="opa-round">—</span>
+            <span class="round">—</span>
             <div>
-              <div class="opa-gp">${esc(name)}</div>
-              <div class="opa-meta">
+              <div class="gp">${esc(name)}</div>
+              <div class="meta">
                 ${esc(data.location)} · ${esc(data.date)}
               </div>
             </div>
-            <span class="opa-status">CANCELLED</span>
+            <span class="status">CANCELLED</span>
           </summary>
-          <div class="opa-detail">
-            <div class="opa-note">
+          <div class="detail">
+            <div class="note">
               ${esc(data.note)}
             </div>
           </div>
         </details>`;
     }
-
-    const practice = data.practice || {};
 
     const practice = data.practice || {};
     const practiceRows = ["FP1", "FP2", "FP3"].map(session => {
