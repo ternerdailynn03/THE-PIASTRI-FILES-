@@ -179,8 +179,8 @@ const results = {
   const filter=root.querySelector('#opa-filter');
   function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function cell(value) {
-  const v = value ?? "VERIFY";
-  return `<td class="${v === "VERIFY" || v === "—" ? "verify" : ""}">${esc(v)}</td>`;
+  const v = value ?? "—";
+  return `<td class="${v === "—" || v === "—" ? "verify" : ""}">${esc(v)}</td>`;
 }
 
 function table(title, headers, rows) {
@@ -235,47 +235,47 @@ function render() {
       const d = practice[session] || {};
       return [
         session,
-        d.position ?? "VERIFY",
-        d.time ?? "VERIFY",
-        d.gap ?? "VERIFY",
-        d.laps ?? "VERIFY"
+        d.position ?? "—",
+        d.time ?? "—",
+        d.gap ?? "—",
+        d.laps ?? "—"
       ];
     });
 
     const qualifying = data.qualifying || {};
     const qualifyingRows = [[
-      qualifying.position ?? "VERIFY",
-      qualifying.Q1 ?? "VERIFY",
+      qualifying.position ?? "—",
+      qualifying.Q1 ?? "—",
       qualifying.Q2 ?? "—",
       qualifying.Q3 ?? "—",
-      qualifying.laps ?? "VERIFY"
+      qualifying.laps ?? "—"
     ]];
 
     const sprintQuali = data.sprintQualifying || {};
     const sprintQualiRows = [[
-      sprintQuali.position ?? "VERIFY",
-      sprintQuali.SQ1 ?? "VERIFY",
+      sprintQuali.position ?? "—",
+      sprintQuali.SQ1 ?? "—",
       sprintQuali.SQ2 ?? "—",
       sprintQuali.SQ3 ?? "—",
-      sprintQuali.laps ?? "VERIFY"
+      sprintQuali.laps ?? "—"
     ]];
 
   const sprint = data.sprint || {};
     const sprintRows = [[
-      sprint.position ?? "VERIFY",
-      sprint.time ?? "VERIFY",
-      sprint.gap ?? "VERIFY",
-      sprint.laps ?? "VERIFY",
-      sprint.points ?? "VERIFY"
+      sprint.position ?? "—",
+      sprint.time ?? "—",
+      sprint.gap ?? "—",
+      sprint.laps ?? "—",
+      sprint.points ?? "—"
     ]];
 
     const race = data.race || {};
     const raceRows = [[
-      race.position ?? "VERIFY",
-      race.time ?? "VERIFY",
-      race.gap ?? "VERIFY",
-      race.points ?? "VERIFY",
-      race.laps ?? "VERIFY"
+      race.position ?? "—",
+      race.time ?? "—",
+      race.gap ?? "—",
+      race.points ?? "—",
+      race.laps ?? "—"
     ]];
     let tables = table(
       "PRACTICE",
