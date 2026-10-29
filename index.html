@@ -351,7 +351,7 @@ function render() {
     ]];
     let tables = table(
       "PRACTICE",
-      ["Session", "Position", "Best lap", "Gap to P1", "Laps"],
+      ["Session", "Position", "Time", "Gap to P1", "Laps"],
       practiceRows
     );
 
@@ -364,7 +364,7 @@ function render() {
 
       tables += table(
         "SPRINT",
-        ["Position", "Time / gap", "Gap to P1", "Laps", "Points"],
+        ["Position", "Time", "Gap to P1", "Laps", "Points"],
         sprintRows
       );
     }
