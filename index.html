@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta const sprintRounds={charset="utf-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -829,14 +829,17 @@ function render() {
       sprint.points ?? "—"
     ]];
 
-    const race = data.race || {};
-    const raceRows = [[
-      race.position ?? "—",
-      race.time ?? "—",
-      race.gap ?? "—",
-      race.points ?? "—",
-      race.laps ?? "—"
-    ]];
+   
+const race = data.race || {};
+
+const raceRows = [[
+  race.position ?? "—",
+  race.time ?? "—",
+  race.fastestLap ?? "—",
+  race.points ?? "—",
+  race.laps ?? "—"
+]];
+
     let tables = table(
       "PRACTICE",
       ["Session", "Position", "Time", "Gap to P1", "Laps"],
@@ -852,7 +855,7 @@ function render() {
 
       tables += table(
         "SPRINT",
-        ["Position", "Time", "Best laps", "Laps", "Points"],
+        ["Position", "Time", "Gap to P1", "Laps", "Points"],
         sprintRows
       );
     }
@@ -865,7 +868,7 @@ function render() {
 
 tables += table(
   "RACE",
-  ["Position", "Time / Retired", "Best laps", "Points", "Laps"],
+ ["Position", "Time / Retired", "Fastest lap", "Points", "Laps"],
   raceRows
 );
 
