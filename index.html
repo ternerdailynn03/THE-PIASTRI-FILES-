@@ -90,6 +90,22 @@
 .topbar{height:64px}.top-meta{font-size:8px}.hero-copy{font-size:10px;max-width:260px}.intro-row{align-items:flex-start;flex-direction:column;gap:8px}.intro-note{text-align:left}.tools{grid-template-columns:1fr}.tools select{min-height:44px}.season{flex:1;min-width:calc(25% - 8px);padding:11px 8px}.season-heading{align-items:flex-start;flex-direction:column}.season-heading p{text-align:left}.highlights-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.highlight-item:nth-child(3n){border-right:1px solid rgba(255,255,255,.14)}.highlight-item:nth-child(2n){border-right:0;padding-right:2px}.highlight-item:nth-child(3n+1){padding-left:2px}.highlight-item:nth-last-child(-n+3){border-bottom:1px solid rgba(255,255,255,.14)}.highlight-item:nth-last-child(-n+2){border-bottom:0}.highlights-bottom{align-items:flex-start;flex-direction:column;gap:5px}.card summary{grid-template-columns:34px minmax(0,1fr);gap:10px;padding:15px 12px}.status{grid-column:2;justify-self:start}.gp{font-size:11px}.detail{padding:0 12px 16px}.footer-bottom{flex-direction:column;gap:5px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  /* 2023 — four highlights in one row */
+.season-highlights-2023 .highlights-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.season-highlights-2023 .highlight-item {
+  border-bottom: none !important;
+}
+
+.season-highlights-2023 .highlight-item:nth-child(3n) {
+  border-right: 1px solid #303030;
+}
+
+.season-highlights-2023 .highlight-item:last-child {
+  border-right: none;
+}
 </style>
 </head>
 <body>
@@ -2175,7 +2191,7 @@ function renderHighlights(year) {
   }).join("");
 
   return `
-    <section class="season-highlights" aria-label="${year} season highlights">
+    <section class="season-highlights season-highlights-${year}" aria-label="${year} season highlights">
       <div class="highlights-top">
         <span class="highlights-title">Season highlights</span>
         <span class="highlights-season">${esc(highlight.seasonLabel || "ROOKIE SEASON")}</span>
