@@ -2072,18 +2072,32 @@ race: {
   "2025": {},
   "2026": {}
 };
-  const seasonHighlights = {
-    "2023": {
-      items: [
-        { value: "P3", label: "First podium", venue: "Japan", date: "24 Sep 2023" },
-        { value: "P1", label: "First sprint win", venue: "Qatar", date: "07 Oct 2023" },
-        { value: "1:25.072", label: "First fastest lap", venue: "Italy", date: "03 Sep 2023" },
-        { value: "26 PTS", label: "Best weekend", venue: "Qatar", date: "06–08 Oct 2023" }
-      ],
-      summary: "Championship finish",
-      result: "P9 · 97 POINTS"
-    }
-  };
+const seasonHighlights = {
+  "2023": {
+    items: [
+      { value: "P3", label: "First podium", venue: "Japan", date: "24 Sep 2023" },
+      { value: "P1", label: "First sprint win", venue: "Qatar", date: "07 Oct 2023" },
+      { value: "1:25.072", label: "First fastest lap", venue: "Italy", date: "03 Sep 2023" },
+      { value: "26 PTS", label: "Best weekend", venue: "Qatar", date: "06–08 Oct 2023" }
+    ],
+    summary: "Championship finish",
+    result: "P9 · 97 POINTS"
+  },
+
+  "2024": {
+    seasonLabel: "SECOND SEASON",
+    items: [
+      { value: "P2", label: "First podium of the season", venue: "Monaco", date: "26 May 2024" },
+      { value: "P1", label: "Sprint victory", venue: "Qatar", date: "30 Nov 2024" },
+      { value: "2 WINS", label: "Grand Prix victories", venue: "Hungary · Azerbaijan", date: "21 Jul · 15 Sep 2024" },
+      { value: "1:30.634", label: "Fastest lap ★", venue: "Miami · Lap 43", date: "05 May 2024" },
+      { value: "25 PTS", label: "Best weekend", venue: "Austria · Hungary · Azerbaijan", date: "30 Jun · 21 Jul · 15 Sep 2024" },
+      { value: "100%", label: "Season laps completed", venue: "1,444 / 1,444 laps", date: "2024 season" }
+    ],
+    summary: "McLaren Constructors' Champions",
+    result: "P4 · 292 POINTS"
+  }
+};
 
   function renderHighlights(year) {
     const highlight = seasonHighlights[year];
@@ -2098,7 +2112,7 @@ race: {
       <section class="season-highlights" aria-label="${year} season highlights">
         <div class="highlights-top">
           <span class="highlights-title">Season highlights</span>
-         <span class="highlights-season">ROOKIE SEASON</span>
+         <span class="highlights-season">${esc(highlight.seasonLabel || "ROOKIE SEASON")}</span>
         </div>
         <div class="highlights-grid">${cards}</div>
         <div class="highlights-bottom">
