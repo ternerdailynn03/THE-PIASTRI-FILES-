@@ -2085,19 +2085,45 @@ const seasonHighlights = {
   },
 
   "2024": {
-    seasonLabel: "SECOND SEASON",
-    items: [
-      { value: "P2", label: "First podium of the season", venue: "Monaco", date: "26 May 2024" },
-      { value: "P1", label: "Sprint victory", venue: "Qatar", date: "30 Nov 2024" },
-      { value: "2 WINS", label: "Grand Prix victories", venue: "Hungary · Azerbaijan", date: "21 Jul · 15 Sep 2024" },
-      { value: "1:30.634", label: "Fastest lap ★", venue: "Miami · Lap 43", date: "05 May 2024" },
-      { value: "25 PTS", label: "Best weekend", venue: "Austria · Hungary · Azerbaijan", date: "30 Jun · 21 Jul · 15 Sep 2024" },
-      { value: "100%", label: "Season laps completed", venue: "1,444 / 1,444 laps", date: "2024 season" }
-    ],
-    summary: "McLaren Constructors' Champions",
-    result: "P4 · 292 POINTS"
+  items: [
+  {
+    value: "P2",
+    label: "First podium of the season",
+    venue: "MONACO · 26 MAY 2024"
+  },
+  {
+    value: "P1",
+    label: "Sprint victory",
+    venue: "QATAR · 30 NOV 2024"
+  },
+  {
+    value: "2 WINS",
+    label: "Grand Prix victories",
+    details: [
+      "HUNGARY · 21 JUL 2024",
+      "AZERBAIJAN · 15 SEP 2024"
+    ]
+  },
+  {
+    value: "1:30.634",
+    label: "Fastest lap ★",
+    venue: "MIAMI · LAP 43 · 05 MAY 2024"
+  },
+  {
+    value: "25 PTS",
+    label: "Best weekends · 25 pts each",
+    details: [
+      "AUSTRIA · 30 JUN 2024",
+      "HUNGARY · 21 JUL 2024",
+      "AZERBAIJAN · 15 SEP 2024"
+    ]
+  },
+  {
+    value: "100%",
+    label: "Season laps completed",
+    venue: "1,444 / 1,444 LAPS · 2024 SEASON"
   }
-};
+],
 
   function renderHighlights(year) {
     const highlight = seasonHighlights[year];
